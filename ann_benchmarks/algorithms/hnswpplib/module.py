@@ -1,10 +1,11 @@
-import hnswlib
+import hnswpplib
 import numpy as np
+import time
 
 from ..base.module import BaseANN
 
 
-class HnswLib(BaseANN):
+class HnswPPLib(BaseANN):
     def __init__(self, metric, method_param):
         self.metric = {"angular": "cosine", "euclidean": "l2"}[metric]
         self.method_param = method_param
@@ -14,16 +15,20 @@ class HnswLib(BaseANN):
 
     def fit(self, X):
         # Only l2 is supported currently
-        self.p = hnswlib.Index(space=self.metric, dim=len(X[0]))
+        self.p = hnswpplib.Index(self.metric, len(X[0]))
         self.p.init_index(
-            max_elements=len(X), ef_construction=self.method_param["efConstruction"], M=self.method_param["M"]
+            max_elements=len(X), ef_construction=self.method_param["efConstruction"], M=self.method_param["M"], random_seed=100, allow_replace_deleted=False
         )
         data_labels = np.arange(len(X))
+        prepare_start = time.time()
+        self.p.prepare_index(X)
+        self.prepare_time = time.time() - prepare_start
         self.p.add_items(np.asarray(X), data_labels)
         self.p.set_num_threads(1)
-        
+
     def set_query_arguments(self, ef):
-        self.p.set_ef(ef)
+        # self.p.set_ef(ef)
+        pass
 
     def query(self, v, n):
         # print(np.expand_dims(v,axis=0).shape)

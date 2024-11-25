@@ -185,7 +185,10 @@ def build_index(algo: BaseANN, X_train: numpy.ndarray) -> Tuple:
     t0 = time.time()
     memory_usage_before = algo.get_memory_usage()
     algo.fit(X_train)
-    build_time = time.time() - t0
+    if not hasattr(algo, 'prepare_time'):
+        build_time = time.time() - t0
+    else:
+        build_time = time.time() - t0 - algo.prepare_time
     index_size = algo.get_memory_usage() - memory_usage_before
 
     print("Built index in", build_time)

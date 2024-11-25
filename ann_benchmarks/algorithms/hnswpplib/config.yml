@@ -1,11 +1,11 @@
 float:
   any:
   - base_args: ['@metric']
-    constructor: HnswLib
+    constructor: HnswPPLib
     disabled: false
-    docker_tag: ann-benchmarks-hnswlib
-    module: ann_benchmarks.algorithms.hnswlib
-    name: hnswlib
+    docker_tag: ann-benchmarks-hnswpplib
+    module: ann_benchmarks.algorithms.hnswpplib
+    name: hnswpplib
     run_groups:
       M-12:
         arg_groups: [{M: 12, efConstruction: 500}]

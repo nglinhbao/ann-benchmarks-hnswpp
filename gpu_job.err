@@ -1,0 +1,178 @@
++ [ -w /var/tmp/xdg_runtime_dir_398917 ]
++ [ -d /home/nhy ]
++ rootlesskit=
++ command -v docker-rootlesskit
++ command -v rootlesskit
++ rootlesskit=rootlesskit
++ break
++ [ -z rootlesskit ]
++ : 
++ : 
++ : builtin
++ : auto
++ : auto
++ net=
++ mtu=
++ [ -z  ]
++ command -v slirp4netns
+Cannot connect to the Docker daemon at unix:///var/tmp/xdg_runtime_dir_398917/docker.sock. Is the docker daemon running?
++ slirp4netns --help+ 
+grep -qw -- --netns-type
++ net=slirp4netns
++ [ -z  ]
++ mtu=65520
++ [ -z slirp4netns ]
++ [ -z 65520 ]
++ [ -z  ]
++ _DOCKERD_ROOTLESS_CHILD=1
++ export _DOCKERD_ROOTLESS_CHILD
++ id -u
++ [ 398917 = 0 ]
++ command -v selinuxenabled
++ exec rootlesskit --net=slirp4netns --mtu=65520 --slirp4netns-sandbox=auto --slirp4netns-seccomp=auto --disable-host-loopback --port-driver=builtin --copy-up=/etc --copy-up=/run --propagation=rslave /sw/software/rootless-docker/bin/dockerd-rootless.sh --experimental --data-root=/var/tmp/docker-container-storage-398917 --storage-driver overlay2
+Cannot connect to the Docker daemon at unix:///var/tmp/xdg_runtime_dir_398917/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///var/tmp/xdg_runtime_dir_398917/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///var/tmp/xdg_runtime_dir_398917/docker.sock. Is the docker daemon running?
++ [ -w /var/tmp/xdg_runtime_dir_398917 ]
+Cannot connect to the Docker daemon at unix:///var/tmp/xdg_runtime_dir_398917/docker.sock. Is the docker daemon running?
++ [ -d /home/nhy ]
++ rootlesskit=
++ command -v docker-rootlesskit
++ command -v rootlesskit
++ rootlesskit=rootlesskit
++ break
++ [ -z rootlesskit ]
++ : 
++ : 
++ : builtin
++ : auto
++ : auto
++ net=
++ mtu=
++ [ -z  ]
++ command -v slirp4netns
++ slirp4netns --helpCannot connect to the Docker daemon at unix:///var/tmp/xdg_runtime_dir_398917/docker.sock. Is the docker daemon running?
++ 
+grep -qw -- --netns-type
++ net=slirp4netns
++ [ -z  ]
++ mtu=65520
++ [ -z slirp4netns ]
++ [ -z 65520 ]
++ [ -z 1 ]
++ [ 1 = 1 ]
++ rm -f /run/docker /run/containerd /run/xtables.lock
++ [ -n  ]
++ stat -c %T -f /etc
++ [ tmpfs = tmpfs ]
++ [ -L /etc/ssl ]
+Cannot connect to the Docker daemon at unix:///var/tmp/xdg_runtime_dir_398917/docker.sock. Is the docker daemon running?
++ realpath /etc/ssl
++ realpath_etc_ssl=/etc/.ro3247927429/ssl
++ rm -f /etc/ssl
++ mkdir /etc/ssl
++ mount --rbind /etc/.ro3247927429/ssl /etc/ssl
++ exec dockerd --experimental --data-root=/var/tmp/docker-container-storage-398917 --storage-driver overlay2
+Cannot connect to the Docker daemon at unix:///var/tmp/xdg_runtime_dir_398917/docker.sock. Is the docker daemon running?
+time="2024-11-25T20:04:26.394299327+11:00" level=info msg="Starting up"
+Cannot connect to the Docker daemon at unix:///var/tmp/xdg_runtime_dir_398917/docker.sock. Is the docker daemon running?
+time="2024-11-25T20:04:26.394537246+11:00" level=warning msg="Running experimental build"
+time="2024-11-25T20:04:26.395125004+11:00" level=warning msg="Running in rootless mode. This mode has feature limitations."
+time="2024-11-25T20:04:26.395257163+11:00" level=info msg="Running with RootlessKit integration"
+time="2024-11-25T20:04:26.399758982+11:00" level=info msg="libcontainerd: started new containerd process" pid=3565141
+time="2024-11-25T20:04:26.399943590+11:00" level=info msg="parsed scheme: \"unix\"" module=grpc
+time="2024-11-25T20:04:26.400082062+11:00" level=info msg="scheme \"unix\" not registered, fallback to default scheme" module=grpc
+time="2024-11-25T20:04:26.400234219+11:00" level=info msg="ccResolverWrapper: sending update to cc: {[{unix:///var/tmp/xdg_runtime_dir_398917/docker/containerd/containerd.sock  <nil> 0 <nil>}] <nil> <nil>}" module=grpc
+time="2024-11-25T20:04:26.400373251+11:00" level=info msg="ClientConn switching balancer to \"pick_first\"" module=grpc
+time="2024-11-25T20:04:26+11:00" level=warning msg="containerd config version `1` has been deprecated and will be removed in containerd v2.0, please switch to version `2`, see https://github.com/containerd/containerd/blob/main/docs/PLUGINS.md#version-header"
+time="2024-11-25T20:04:26.423669843+11:00" level=info msg="starting containerd" revision=1c90a442489720eec95342e1789ee8a5e1b9536f version=v1.6.9
+time="2024-11-25T20:04:26.446221892+11:00" level=info msg="loading plugin \"io.containerd.content.v1.content\"..." type=io.containerd.content.v1
+time="2024-11-25T20:04:26.446440414+11:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.aufs\"..." type=io.containerd.snapshotter.v1
+time="2024-11-25T20:04:26.449548685+11:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.btrfs\"..." type=io.containerd.snapshotter.v1
+time="2024-11-25T20:04:26.450045582+11:00" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.btrfs\"..." error="path /var/tmp/docker-container-storage-398917/containerd/daemon/io.containerd.snapshotter.v1.btrfs (xfs) must be a btrfs filesystem to be used with the btrfs snapshotter: skip plugin" type=io.containerd.snapshotter.v1
+time="2024-11-25T20:04:26.450193702+11:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.devmapper\"..." type=io.containerd.snapshotter.v1
+time="2024-11-25T20:04:26.450336661+11:00" level=warning msg="failed to load plugin io.containerd.snapshotter.v1.devmapper" error="devmapper not configured"
+time="2024-11-25T20:04:26.450476465+11:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.native\"..." type=io.containerd.snapshotter.v1
+time="2024-11-25T20:04:26.450617120+11:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.overlayfs\"..." type=io.containerd.snapshotter.v1
+time="2024-11-25T20:04:26.453360423+11:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.zfs\"..." type=io.containerd.snapshotter.v1
+time="2024-11-25T20:04:26.453719059+11:00" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.zfs\"..." error="path /var/tmp/docker-container-storage-398917/containerd/daemon/io.containerd.snapshotter.v1.zfs must be a zfs filesystem to be used with the zfs snapshotter: skip plugin" type=io.containerd.snapshotter.v1
+time="2024-11-25T20:04:26.453865876+11:00" level=info msg="loading plugin \"io.containerd.metadata.v1.bolt\"..." type=io.containerd.metadata.v1
+time="2024-11-25T20:04:26.454007303+11:00" level=warning msg="could not use snapshotter devmapper in metadata plugin" error="devmapper not configured"
+time="2024-11-25T20:04:26.454140434+11:00" level=info msg="metadata content store policy set" policy=shared
+time="2024-11-25T20:04:26.454355530+11:00" level=info msg="loading plugin \"io.containerd.differ.v1.walking\"..." type=io.containerd.differ.v1
+time="2024-11-25T20:04:26.454501365+11:00" level=info msg="loading plugin \"io.containerd.event.v1.exchange\"..." type=io.containerd.event.v1
+time="2024-11-25T20:04:26.454635608+11:00" level=info msg="loading plugin \"io.containerd.gc.v1.scheduler\"..." type=io.containerd.gc.v1
+time="2024-11-25T20:04:26.454802943+11:00" level=info msg="loading plugin \"io.containerd.service.v1.introspection-service\"..." type=io.containerd.service.v1
+time="2024-11-25T20:04:26.455035061+11:00" level=info msg="loading plugin \"io.containerd.service.v1.containers-service\"..." type=io.containerd.service.v1
+time="2024-11-25T20:04:26.455173562+11:00" level=info msg="loading plugin \"io.containerd.service.v1.content-service\"..." type=io.containerd.service.v1
+time="2024-11-25T20:04:26.455319047+11:00" level=info msg="loading plugin \"io.containerd.service.v1.diff-service\"..." type=io.containerd.service.v1
+time="2024-11-25T20:04:26.456092986+11:00" level=info msg="loading plugin \"io.containerd.service.v1.images-service\"..." type=io.containerd.service.v1
+time="2024-11-25T20:04:26.456238811+11:00" level=info msg="loading plugin \"io.containerd.service.v1.leases-service\"..." type=io.containerd.service.v1
+time="2024-11-25T20:04:26.456405556+11:00" level=info msg="loading plugin \"io.containerd.service.v1.namespaces-service\"..." type=io.containerd.service.v1
+time="2024-11-25T20:04:26.456551160+11:00" level=info msg="loading plugin \"io.containerd.service.v1.snapshots-service\"..." type=io.containerd.service.v1
+time="2024-11-25T20:04:26.456688920+11:00" level=info msg="loading plugin \"io.containerd.runtime.v1.linux\"..." type=io.containerd.runtime.v1
+time="2024-11-25T20:04:26.456887575+11:00" level=info msg="loading plugin \"io.containerd.runtime.v2.task\"..." type=io.containerd.runtime.v2
+time="2024-11-25T20:04:26.457075499+11:00" level=info msg="loading plugin \"io.containerd.monitor.v1.cgroups\"..." type=io.containerd.monitor.v1
+time="2024-11-25T20:04:26.457494980+11:00" level=info msg="loading plugin \"io.containerd.service.v1.tasks-service\"..." type=io.containerd.service.v1
+time="2024-11-25T20:04:26.457645594+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.introspection\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.457784306+11:00" level=info msg="loading plugin \"io.containerd.internal.v1.restart\"..." type=io.containerd.internal.v1
+time="2024-11-25T20:04:26.457965127+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.containers\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.458109068+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.content\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.458244353+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.diff\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.458376282+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.events\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.458519492+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.healthcheck\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.458667722+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.images\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.458805241+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.leases\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.458952178+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.namespaces\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.459094336+11:00" level=info msg="loading plugin \"io.containerd.internal.v1.opt\"..." type=io.containerd.internal.v1
+time="2024-11-25T20:04:26.459263856+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.snapshots\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.459406315+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.tasks\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.459556808+11:00" level=info msg="loading plugin \"io.containerd.grpc.v1.version\"..." type=io.containerd.grpc.v1
+time="2024-11-25T20:04:26.459692795+11:00" level=info msg="loading plugin \"io.containerd.tracing.processor.v1.otlp\"..." type=io.containerd.tracing.processor.v1
+time="2024-11-25T20:04:26.459865982+11:00" level=info msg="skip loading plugin \"io.containerd.tracing.processor.v1.otlp\"..." error="no OpenTelemetry endpoint: skip plugin" type=io.containerd.tracing.processor.v1
+time="2024-11-25T20:04:26.460015624+11:00" level=info msg="loading plugin \"io.containerd.internal.v1.tracing\"..." type=io.containerd.internal.v1
+time="2024-11-25T20:04:26.460167310+11:00" level=error msg="failed to initialize a tracing processor \"otlp\"" error="no OpenTelemetry endpoint: skip plugin"
+time="2024-11-25T20:04:26.460458359+11:00" level=info msg=serving... address=/var/tmp/xdg_runtime_dir_398917/docker/containerd/containerd-debug.sock
+time="2024-11-25T20:04:26.460634811+11:00" level=info msg=serving... address=/var/tmp/xdg_runtime_dir_398917/docker/containerd/containerd.sock.ttrpc
+time="2024-11-25T20:04:26.460802247+11:00" level=info msg=serving... address=/var/tmp/xdg_runtime_dir_398917/docker/containerd/containerd.sock
+time="2024-11-25T20:04:26.460947581+11:00" level=info msg="containerd successfully booted in 0.038410s"
+time="2024-11-25T20:04:26.465445453+11:00" level=info msg="parsed scheme: \"unix\"" module=grpc
+time="2024-11-25T20:04:26.465618820+11:00" level=info msg="scheme \"unix\" not registered, fallback to default scheme" module=grpc
+time="2024-11-25T20:04:26.465768713+11:00" level=info msg="ccResolverWrapper: sending update to cc: {[{unix:///var/tmp/xdg_runtime_dir_398917/docker/containerd/containerd.sock  <nil> 0 <nil>}] <nil> <nil>}" module=grpc
+time="2024-11-25T20:04:26.465915660+11:00" level=info msg="ClientConn switching balancer to \"pick_first\"" module=grpc
+time="2024-11-25T20:04:26.466617994+11:00" level=info msg="parsed scheme: \"unix\"" module=grpc
+time="2024-11-25T20:04:26.466758790+11:00" level=info msg="scheme \"unix\" not registered, fallback to default scheme" module=grpc
+time="2024-11-25T20:04:26.466958607+11:00" level=info msg="ccResolverWrapper: sending update to cc: {[{unix:///var/tmp/xdg_runtime_dir_398917/docker/containerd/containerd.sock  <nil> 0 <nil>}] <nil> <nil>}" module=grpc
+time="2024-11-25T20:04:26.467099833+11:00" level=info msg="ClientConn switching balancer to \"pick_first\"" module=grpc
+time="2024-11-25T20:04:26.513631141+11:00" level=warning msg="Your kernel does not support CPU realtime scheduler"
+time="2024-11-25T20:04:26.513818775+11:00" level=warning msg="Your kernel does not support cgroup blkio weight"
+time="2024-11-25T20:04:26.513957957+11:00" level=warning msg="Your kernel does not support cgroup blkio weight_device"
+time="2024-11-25T20:04:26.514228948+11:00" level=info msg="Loading containers: start."
+time="2024-11-25T20:04:26.527398102+11:00" level=info msg="skipping firewalld management for rootless mode"
+time="2024-11-25T20:04:26.647219350+11:00" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+time="2024-11-25T20:04:26.698471080+11:00" level=info msg="Loading containers: done."
+time="2024-11-25T20:04:26.706393399+11:00" level=warning msg="Not using native diff for overlay2, this may cause degraded performance for building images: running in a user namespace" storage-driver=overlay2
+time="2024-11-25T20:04:26.707229465+11:00" level=info msg="Docker daemon" commit=3056208 graphdriver(s)=overlay2 version=20.10.21
+time="2024-11-25T20:04:26.707406990+11:00" level=info msg="Daemon has completed initialization"
+time="2024-11-25T20:04:26.718413687+11:00" level=info msg="API listen on /var/tmp/xdg_runtime_dir_398917/docker.sock"
+WARNING: You are using pip version 21.1.1; however, version 24.3.1 is available.
+You should consider upgrading via the '/sw/software/Python/3.9.5-GCCcore-10.3.0/bin/python3.9 -m pip install --upgrade pip' command.
+time="2024-11-25T20:04:29.858217192+11:00" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+time="2024-11-25T20:04:29.858281423+11:00" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+time="2024-11-25T20:04:29.858293115+11:00" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+time="2024-11-25T20:04:29.858479377+11:00" level=info msg="starting signal loop" namespace=moby path=/var/tmp/xdg_runtime_dir_398917/docker/containerd/daemon/io.containerd.runtime.v2.task/moby/ed5525cba8c82a3861aa4df4bdc6d623c5bf0dda4dd542ffce92a6ebca0dd1e3 pid=3565461 runtime=io.containerd.runc.v2
+time="2024-11-25T20:04:45.938933660+11:00" level=info msg="shim disconnected" id=ed5525cba8c82a3861aa4df4bdc6d623c5bf0dda4dd542ffce92a6ebca0dd1e3
+time="2024-11-25T20:04:45.939035492+11:00" level=info msg="ignoring event" container=ed5525cba8c82a3861aa4df4bdc6d623c5bf0dda4dd542ffce92a6ebca0dd1e3 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+time="2024-11-25T20:04:45.939208739+11:00" level=warning msg="cleaning up after shim disconnected" id=ed5525cba8c82a3861aa4df4bdc6d623c5bf0dda4dd542ffce92a6ebca0dd1e3 namespace=moby
+time="2024-11-25T20:04:45.939520106+11:00" level=info msg="cleaning up dead shim"
+time="2024-11-25T20:04:45.947589834+11:00" level=warning msg="cleanup warnings time=\"2024-11-25T20:04:45+11:00\" level=info msg=\"starting signal loop\" namespace=moby pid=3566436 runtime=io.containerd.runc.v2\n"
+time="2024-11-25T20:04:49.382592521+11:00" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+time="2024-11-25T20:04:49.382655951+11:00" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+time="2024-11-25T20:04:49.382669697+11:00" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+time="2024-11-25T20:04:49.382823758+11:00" level=info msg="starting signal loop" namespace=moby path=/var/tmp/xdg_runtime_dir_398917/docker/containerd/daemon/io.containerd.runtime.v2.task/moby/d8586aa7380c33897342f4b99b2b43e0bbe579c3dedb4696cf13707efe7c9603 pid=3566486 runtime=io.containerd.runc.v2
+time="2024-11-25T20:04:51.155075554+11:00" level=info msg="shim disconnected" id=d8586aa7380c33897342f4b99b2b43e0bbe579c3dedb4696cf13707efe7c9603
+time="2024-11-25T20:04:51.155096834+11:00" level=info msg="ignoring event" container=d8586aa7380c33897342f4b99b2b43e0bbe579c3dedb4696cf13707efe7c9603 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+time="2024-11-25T20:04:51.155680324+11:00" level=warning msg="cleaning up after shim disconnected" id=d8586aa7380c33897342f4b99b2b43e0bbe579c3dedb4696cf13707efe7c9603 namespace=moby
+time="2024-11-25T20:04:51.155983696+11:00" level=info msg="cleaning up dead shim"
+time="2024-11-25T20:04:51.171710834+11:00" level=warning msg="cleanup warnings time=\"2024-11-25T20:04:51+11:00\" level=info msg=\"starting signal loop\" namespace=moby pid=3566554 runtime=io.containerd.runc.v2\n"
+The command '/bin/sh -c pip3 install nearpy bitarray redis sklearn numpy setuptools' returned a non-zero code: 1
